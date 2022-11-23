@@ -52,7 +52,7 @@ NODE delete_fornt(NODE first)
     free(ptr);
     return first;
 }
-NODE insert_rare(NODE first,int item)
+NODE insert_rear(NODE first,int item)
 {
     NODE tem,ptr;
     tem=getnode();
@@ -229,7 +229,7 @@ int main()
     		case 2:
     			printf("\nEnter the element to be inserted (rare): ");
     			scanf("%d",&item);
-    			first=insert_rare(first,item);
+    			first=insert_rear(first,item);
     			display(first);
     			break;
     		case 3:
