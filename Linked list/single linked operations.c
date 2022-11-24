@@ -227,7 +227,7 @@ int main()
     			display(first);
     			break;
     		case 2:
-    			printf("\nEnter the element to be inserted (rare): ");
+    			printf("\nEnter the element to be inserted (rear): ");
     			scanf("%d",&item);
     			first=insert_rear(first,item);
     			display(first);
