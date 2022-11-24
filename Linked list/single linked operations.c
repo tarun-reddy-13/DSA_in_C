@@ -13,13 +13,13 @@
 *******************************************************************************/
 #include <stdio.h>
 #include<stdlib.h>
-struct node
+struct node //creating node structure
 {
     int data;
     struct node *link;
 };
 typedef struct node *NODE;
-NODE getnode()
+NODE getnode()  //function to allot memory for the new node
 {
     NODE x;
     x=(NODE)malloc(sizeof(NODE));
@@ -28,9 +28,9 @@ NODE getnode()
         printf("\nMemory not alloted");
         exit(0);
     }
-    return x;
+    return x; //returns the adress of new node
 }
-NODE insert_front(NODE first,int item)
+NODE insert_front(NODE first,int item) //function for inserting the node at front of linked list
 {
     NODE tem;
     tem=getnode();
@@ -38,7 +38,7 @@ NODE insert_front(NODE first,int item)
     tem->link=first;
     return tem;
 }
-NODE delete_fornt(NODE first)
+NODE delete_fornt(NODE first)  //function for deleting the starting node of linked list
 {
     NODE ptr;
     if(first==NULL)
@@ -52,7 +52,7 @@ NODE delete_fornt(NODE first)
     free(ptr);
     return first;
 }
-NODE insert_rear(NODE first,int item)
+NODE insert_rear(NODE first,int item)  //function for inserting the node at the end of linked list
 {
     NODE tem,ptr;
     tem=getnode();
@@ -66,7 +66,7 @@ NODE insert_rear(NODE first,int item)
     ptr->link=tem;
     return first;
 }
-NODE delete_end(NODE first)
+NODE delete_end(NODE first)  ////function for deleting the last node of linked list
 {
     NODE cur,pre;
     if(first==NULL)
@@ -81,10 +81,10 @@ NODE delete_end(NODE first)
         return NULL;
     }
     else
-    {
+    {                    
         cur=first;
         pre=NULL;
-        while(cur->link!=NULL)
+        while(cur->link!=NULL)    
         {
             pre=cur;
             cur=cur->link;
@@ -95,7 +95,7 @@ NODE delete_end(NODE first)
         return first;
     }
 }
-NODE insert_pos(NODE first,int pos,int item)
+NODE insert_pos(NODE first,int pos,int item)     //function to insert the new node at specified position
 {
     NODE pre,cur,tem;
     int count=1;
@@ -123,7 +123,7 @@ NODE insert_pos(NODE first,int pos,int item)
     }
     return first;
 }
-NODE delete_pos(NODE first,int pos)
+NODE delete_pos(NODE first,int pos)  //function to delete the node at specified position
 {
 	NODE pre,cur;
 	int count=1;
@@ -149,7 +149,7 @@ NODE delete_pos(NODE first,int pos)
 	}
 	return first;
 }
-void display(NODE first)
+void display(NODE first)  //function to display the elements of linked list
 {
     NODE ptr;
     ptr=first;
@@ -167,7 +167,7 @@ void display(NODE first)
     	}
 	}
 }
-int count(NODE first)
+int count(NODE first)    //function to count the nodes in linked list
 {
     NODE tem;
     int count=0;
@@ -181,7 +181,7 @@ int count(NODE first)
     }
     return count;
 }
-void search(NODE first,int ele)
+void search(NODE first,int ele)  //function to search the element in linked list
 {
     NODE tem;
     int count=0,flag=-1;
@@ -208,8 +208,7 @@ void search(NODE first,int ele)
 }
 int main()
 {
-    NODE first;
-    first=getnode();
+    NODE first; //declaring first
     first=NULL;
     int item,pos;
     int choice;
