@@ -93,7 +93,7 @@ void postorder(TREE root)
         printf(" %d",root->data);
     }
 }
-int search(node *root,int item,int *flag)
+int search(TREE root,int item,int *flag)
 {
 	if(root!=NULL)
 	{
@@ -103,7 +103,7 @@ int search(node *root,int item,int *flag)
 			return 1;	
 	}
 }
-void main()
+int main()
 {
     TREE root;
     root=NULL;
@@ -155,7 +155,7 @@ void main()
                         scanf("%d",&item);
                         flag=0;
                         flag=search(root,item,&flag);
-                            if(flag==1)
+                        if(flag)
                             printf("\nSeach successful");
                         else
                             printf("\nSearch unsuccessful, element not found");
@@ -165,19 +165,5 @@ void main()
         }
         printf("\n");
     }
+    return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
